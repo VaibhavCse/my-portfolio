@@ -1,7 +1,8 @@
 .contact-section {
   padding: 150px 15px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--bg-color); /* Dynamic background color */
+  color: var(--text-color); /* Dynamic text color */
+  text-align: center; /* Center align text for the entire section */
 }
 
 .container {
@@ -11,113 +12,46 @@
 
 /* Align section title to the center and style it */
 .contact-section h2 {
-  text-align: center; /* Centered heading */
   font-size: 2rem;
   font-weight: bold;
   color: #007bff; /* Blue color for heading */
-  margin-bottom: 30px;
-  position: relative;
-}
-
-/* Add underline effect under heading */
-/* .contact-section h2::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 50px;
-  height: 3px;
-  background-color: #007bff;
-} */
-
-/* Style for the form */
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Reduced gap for form fields */
-}
-
-/* Style for input and textarea fields */
-.contact-form label {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 5px;
-}
-
-.contact-form input, .contact-form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: border-color 0.3s ease;
-}
-
-/* Change border color on focus */
-.contact-form input:focus, .contact-form textarea:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
-/* Style for the send button */
-.contact-form button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Button hover effect */
-.contact-form button:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
+  margin-bottom: 20px;
 }
 
 /* Style for social links */
 .social-links {
   list-style: none;
   padding: 0;
+  display: flex;
+  justify-content: center; /* Centering social links */
+  flex-wrap: wrap; /* Allow wrapping of social links */
 }
 
 .social-links li {
-  display: inline-block;
-  margin: 0 15px;
+  margin: 0 15px; /* Space between social links */
 }
 
 .social-links a {
   text-decoration: none;
   font-size: 1.2rem;
-  color: #333;
-  display: flex;
-  align-items: center;
+  color: var(--text-color); /* Match text color with the theme */
   transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  padding: 5px; /* Added padding for better clickable area */
+  border-radius: 5px; /* Rounded corners for links */
 }
 
 .social-links a:hover {
-  transform: scale(1.2);
-  color: #007bff;
-}
-
-.social-links a svg {
-  margin-right: 8px;
-  font-size: 1.5rem;
+  transform: scale(1.1); /* Slightly smaller scale for hover */
+  color: #007bff; /* Change color on hover */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .contact-form {
-    gap: 10px; /* Further reduced gap for smaller screens */
-  }
-
   .contact-section h2 {
     font-size: 1.8rem;
   }
-  
-  .contact-form button {
-    padding: 10px;
-    font-size: 1rem;
+
+  .social-links a {
+    font-size: 1rem; /* Smaller font size for mobile */
   }
 }

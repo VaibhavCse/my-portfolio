@@ -96,3 +96,43 @@
     transform: scale(1.05); /* Slightly increase size on hover */
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* Enhance shadow on hover */
 }
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide the links initially */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: var(--navbar-bg); /* Match the navbar background */
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show the menu when active */
+  }
+
+  .nav-links li {
+    margin: 10px 0; /* Space out links vertically */
+  }
+
+  .theme-toggle {
+    display: none; /* Hide the dark mode toggle on mobile for now */
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--navbar-text);
+  }
+}
+
+/* Larger screens (desktop/tablet) */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none; /* Only show hamburger on small screens */
+  }
+}

@@ -4,18 +4,17 @@
   background-color: var(--background-color);  /* Light background for light mode */
   color: #333;  /* Dark text for light mode */
   text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transitions */
 }
 
-
 .projectheading {
-  text-align: center; /* Centered heading */
+  text-align: center;
   font-size: 2rem;
   font-weight: bold;
   color: #007bff; /* Blue color for heading */
   margin-bottom: 30px;
   position: relative;
-  margin-top: 20px;;
+  margin-top: 20px;
 }
 
 .projects-container {
@@ -24,19 +23,21 @@
   gap: 30px;
   flex-wrap: wrap;
   margin-top: 20px;
+  padding: 0 20px; /* Padding to prevent content from touching edges */
 }
 
 .project-card {
   background-color: #fff;  /* White background for cards in light mode */
   border-radius: 10px;
   padding: 20px;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: left; /* Better readability on small screens */
 }
 
 .project-image {
@@ -50,16 +51,19 @@
 h3 {
   margin: 10px 0;
   font-size: 1.2rem;
+  color: var(--text-color);
 }
 
 p {
   flex-grow: 1;
   margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .stack-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
   flex-wrap: wrap;
   margin-bottom: 15px;
@@ -72,6 +76,7 @@ p {
   font-size: 0.9rem;
   white-space: nowrap;
 }
+
 
 .project-link {
   display: inline-block;
@@ -104,9 +109,73 @@ body.dark .stack-item {
 }
 
 body.dark .project-link {
-  background-color: #007bff; /* Keep the link color similar */
+  background-color: #007bff; /* Consistent link color */
 }
 
 body.dark .project-link:hover {
   background-color: #0056b3;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects-container {
+    flex-direction: column; /* Stack projects vertically on small screens */
+    gap: 20px;
+    padding: 0 15px; /* Reduce side padding */
+  }
+
+  .project-card {
+    max-width: 100%;
+    text-align: center; /* Center text on small screens */
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .project-link {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    padding: 15px;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .project-link {
+    padding: 8px 12px;
+  }
+
+  .stack-item {
+    font-size: 0.8rem; /* Adjust font size for smaller screens */
+  }
+}
+
+.project-button {
+  background-color: #007bff; /* Button color */
+  color: #fff; /* Text color */
+  padding: 8px 15px; /* Reduced padding */
+  font-size: 1rem; /* Adjust font size */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.project-button:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
+

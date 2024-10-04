@@ -1,7 +1,8 @@
 .experience {
   padding: 50px 15px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--bg-color);  /* Dynamically switch based on theme */
+  color: var(--text-color);  /* Dynamically adjust text color */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -38,7 +39,7 @@
 }
 
 .job-card {
-  background-color: var(--card-bg);
+  background-color: var(--card-bg); /* Ensure dynamic background for light/dark mode */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -70,7 +71,7 @@
 .job-details p {
   margin: 5px 0;
   line-height: 1.6;
-  color: var(--text-color);
+  color: var(--text-color); /* Ensure proper contrast in dark mode */
 }
 
 /* Responsive adjustments */
@@ -87,4 +88,23 @@
   .job-details h3 {
     font-size: 1.2rem;
   }
+}
+
+/* Dark Theme */
+body.dark .experience {
+  background-color: #1e1e1e;  /* Dark background for experience section */
+  color: #ddd;  /* Light text in dark mode */
+}
+
+body.dark .job-card {
+  background-color: #2a2a2a;  /* Darker background for cards */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);  /* Darker shadow */
+}
+
+body.dark .job-details h3 {
+  color: #fff;  /* Ensure job titles stand out in dark mode */
+}
+
+body.dark .job-details p {
+  color: #ccc;  /* Slightly lighter text for descriptions */
 }
