@@ -2,12 +2,6 @@ import React, { useState } from 'react';
 import './Contact.css';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
   return (
     <section id="contact" className="contact-section">
        <h2>Let's Connect</h2>
