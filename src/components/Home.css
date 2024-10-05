@@ -1,11 +1,8 @@
-/* src/components/Home.css */
 .home-section {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
- 
-  background-size: cover; /* Ensures the image covers the entire area */
   position: relative;
   padding: 0 20px;
   overflow: hidden;
@@ -93,6 +90,16 @@
 
 .resume-btn:hover {
   background-color: #000;
+}
+
+/* Particles styling */
+.particles-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Make sure it's behind your content */
 }
 
 /* Responsive styles */
