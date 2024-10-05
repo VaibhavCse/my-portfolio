@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Link, animateScroll as scroll } from 'react-scroll';  // Import scroll
-import { FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa'; // Import icons
+import { Link, animateScroll as scroll } from 'react-scroll';
+import { FaBars, FaTimes, FaBone } from 'react-icons/fa';  // Import FaBone
 import './Navbar.css';
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); // State to toggle menu
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     if (darkMode) {
@@ -20,12 +30,16 @@ const Navbar = () => {
   };
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen); // Toggle menu open/close
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenuOnClick = () => {
+    setMenuOpen(false);
   };
 
   const scrollToTop = () => {
-    scroll.scrollToTop();  // Scroll to top for Home
-    setMenuOpen(false); // Close menu after selection
+    scroll.scrollToTop();
+    setMenuOpen(false);
   };
 
   return (
@@ -34,31 +48,23 @@ const Navbar = () => {
         <div className="logo">
           <h1>Vaibhav Chaudhary</h1>
         </div>
-        <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-          <li>
-            <Link 
-              to="home" 
-              smooth={true} 
-              duration={500}
-              onClick={scrollToTop}  // Scroll to top when clicking Home
-            >
-              Home
-            </Link>
-          </li>
-          <li><Link to="about" smooth={true} duration={500} onClick={() => setMenuOpen(false)}>About</Link></li>
-          <li><Link to="projects" smooth={true} duration={500} onClick={() => setMenuOpen(false)}>Projects</Link></li>
-          <li><Link to="experience" smooth={true} duration={500} onClick={() => setMenuOpen(false)}>Experience</Link></li>
-          <li><Link to="contact" smooth={true} duration={500} onClick={() => setMenuOpen(false)}>Contact</Link></li>
-        </ul>
+        <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
+          <li><Link to="home" smooth={true} duration={500} onClick={scrollToTop}>Home</Link></li>
+          <li><Link to="about" smooth={true} duration={500} onClick={closeMenuOnClick}>About</Link></li>
+          <li><Link to="projects" smooth={true} duration={500} onClick={closeMenuOnClick}>Projects</Link></li>
+          <li><Link to="experience" smooth={true} duration={500} onClick={closeMenuOnClick}>Experience</Link></li>
+          <li><Link to="contact" smooth={true} duration={500} onClick={closeMenuOnClick}>Contact</Link></li>
+        </div>
         <div className="theme-toggle">
           <button onClick={toggleDarkMode} className="theme-button">
-            {darkMode ? <FaSun style={{ color: 'white' }} /> : <FaMoon style={{ color: 'black' }} />}
+            <FaBone style={{ color: darkMode ? 'white' : 'black' }} /> {/* FaBone icon for light/dark mode */}
           </button>
         </div>
-        {/* Hamburger Menu Icon */}
-        <div className="hamburger" onClick={toggleMenu}>
-          {menuOpen ? <FaTimes /> : <FaBars />}
-        </div>
+        {isMobile && (
+          <div className="hamburger" onClick={toggleMenu}>
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </div>
+        )}
       </div>
     </nav>
   );
