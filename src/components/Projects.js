@@ -3,6 +3,8 @@ import React from 'react';
 import './Projects.css';
 import csd from './CSD.png'
 import marketplace from './marketplace.png'
+import syncpath from './syncpath.png'
+import ecogrocer from './OrganicFoods.png'
 
 const Projects = () => {
   const projects = [
@@ -23,16 +25,16 @@ const Projects = () => {
     {
       title: 'SyncPath Consulting',
       description: 'A fully responsive and dynamic single page application for SyncPath Consulting, showcasing the company’s services in Salesforce consulting.',
-      image: marketplace,
+      image: syncpath,
       stack: ['React.js'],
       link: 'http://syncpath.in/'
     },
     {
-      title: 'Organic Foods',
+      title: 'Ecogrocer',
       description: 'An e-commerce platform focused on organic food products, offering a seamless user experience for customers to shop for organic goods.',
-      image: marketplace,
+      image: ecogrocer,
       stack: ['React.js', 'Node.js', 'MongoDB'],
-      link: '#'
+      link: 'https://ecogrocer.netlify.app/'
     }
     // Add more projects here
   ];
