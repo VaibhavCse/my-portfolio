@@ -76,7 +76,8 @@
   border: none;
   border-radius: 5px;
   text-decoration: none;
-  margin-right: 15px;
+  margin: 10px 10px; /* Added margin to ensure buttons have vertical spacing */
+  display: inline-block;
   transition: background-color 0.3s ease;
 }
 
@@ -129,5 +130,7 @@
   .btn {
     font-size: 1rem;
     padding: 10px 20px;
+    width: 100%; /* Make buttons full width on smaller screens */
+    margin-bottom: 15px; /* Add spacing between buttons */
   }
 }

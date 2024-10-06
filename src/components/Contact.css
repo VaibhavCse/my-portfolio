@@ -3,8 +3,8 @@
   background-color: var(--bg-color); /* Dynamic background color */
   color: var(--text-color); /* Dynamic text color */
   text-align: center;
-  position: relative; /* Added position relative */
-  z-index: 10; /* Ensure it stays on top */
+  position: relative;
+  z-index: 10;
 }
 
 .container {
@@ -24,27 +24,30 @@
 .social-links {
   list-style: none;
   padding: 0;
-  display: flex;
-  justify-content: center; /* Centering social links */
-  flex-wrap: wrap; /* Allow wrapping of social links */
-  gap: 20px; /* Added gap between items for better spacing */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid */
+  justify-items: center;
+  gap: 20px;
   z-index: 20; /* Ensure the links are above any other elements */
 }
 
+/* Individual list items */
 .social-links li {
-  margin: 0 15px; /* Space between social links */
+  margin: 0; /* No need for additional spacing with grid */
 }
 
+/* Styling for each link */
 .social-links a {
   text-decoration: none;
   font-size: 1.2rem;
-  color: var(--text-color); /* Match text color with the theme */
+  color: var(--text-color);
   transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-  padding: 10px 15px; /* Added padding for better clickable area */
-  border-radius: 5px; /* Rounded corners for links */
-  display: inline-block; /* Ensures the entire padding area is clickable */
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: inline-block;
 }
 
+/* Hover effect */
 .social-links a:hover {
   transform: scale(1.1); /* Slightly larger scale for hover */
   color: #007bff; /* Change color on hover */
@@ -54,6 +57,10 @@
 @media (max-width: 768px) {
   .contact-section h2 {
     font-size: 1.8rem;
+  }
+
+  .social-links {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Smaller grid on mobile */
   }
 
   .social-links a {
