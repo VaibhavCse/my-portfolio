@@ -2,13 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100vh; /* Keep this to full viewport height */
   position: relative;
   padding: 0 20px;
   overflow: hidden;
 }
 
-/* Optional: Add an overlay to darken/lighten the background */
+/* Overlay for background */
 .home-section::before {
   content: '';
   position: absolute;
@@ -16,8 +16,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity and color here */
-  z-index: 1; /* Keeps the overlay behind the content */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .home-container {
@@ -27,7 +27,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 50px;
-  z-index: 2; /* Ensures the content is above the overlay */
+  z-index: 2; 
 }
 
 .home-left {
@@ -39,15 +39,16 @@
 
 .profile-img {
   width: 350px;
-  height: 350px;
-  object-fit: cover; 
+  height: 350px; /* Ensure a square aspect ratio */
+  object-fit: cover;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .home-right {
   flex: 1;
-  color: #fff; /* Adjust text color to ensure readability against the background */
+  color: #fff; 
+  text-align: left; /* Align text to the left for better readability */
 }
 
 .home-right h1 {
@@ -76,8 +77,7 @@
   border: none;
   border-radius: 5px;
   text-decoration: none;
-  margin: 10px 10px; /* Added margin to ensure buttons have vertical spacing */
-  display: inline-block;
+  margin-right: 15px;
   transition: background-color 0.3s ease;
 }
 
@@ -91,16 +91,6 @@
 
 .resume-btn:hover {
   background-color: #000;
-}
-
-/* Particles styling */
-.particles-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0; /* Make sure it's behind your content */
 }
 
 /* Responsive styles */
@@ -130,7 +120,5 @@
   .btn {
     font-size: 1rem;
     padding: 10px 20px;
-    width: 100%; /* Make buttons full width on smaller screens */
-    margin-bottom: 15px; /* Add spacing between buttons */
   }
 }
