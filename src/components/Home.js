@@ -16,7 +16,7 @@ const Home = () => {
             As a passionate full stack developer, I specialize in building high-performance, scalable web applications that combine efficiency with user-focused design. With hands-on expertise in modern technologies like <strong>Node.js</strong>, <strong>React.js</strong>, and <strong>MongoDB</strong>, I create dynamic and responsive solutions tailored to meet the demands of modern web development.
           </p>
           <a href="#contact" className="btn">Get in Touch</a>
-          <a href={resume} download="VaibhavChaudharyResume.pdf" className="btn resume-btn">Download Resume</a>
+          <a href={resume} download="VaibhavChaudharyResume.pdf" className="btn resume-btn">Resume</a>
         </div>
       </div>
     </section>
