@@ -1,61 +1,10 @@
-import React, { useCallback } from 'react';
 import './Home.css';
 import profilePic from './profile_pic.jpg';
 import resume from './VaibhavChaudharyResume.pdf';
-import Particles from "react-tsparticles"; // Correct import
-import { loadFull } from "tsparticles";    // Import the particles engine
 
 const Home = () => {
-  const particlesInit = useCallback(async (engine) => {
-    // Load full tsparticles package
-    await loadFull(engine);
-  }, []);
-
-  const particlesLoaded = useCallback(async (container) => {
-    console.log(container);
-  }, []);
-
   return (
     <section className="home-section">
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-        options={{
-          particles: {
-            number: {
-              value: 80,
-              density: {
-                enable: true,
-                value_area: 800,
-              },
-            },
-            move: {
-              speed: 4,
-              direction: "none",
-              out_mode: "out",
-            },
-            shape: {
-              type: "circle",
-            },
-            opacity: {
-              value: 0.5,
-            },
-            size: {
-              value: 3,
-            },
-          },
-          interactivity: {
-            events: {
-              onhover: {
-                enable: true,
-                mode: "repulse",
-              },
-            },
-          },
-          detectRetina: true,
-        }}
-      />
       <div className="home-container">
         <div className="home-left">
           <img src={profilePic} alt="Vaibhav Chaudhary" className="profile-img" />

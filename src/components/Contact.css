@@ -2,7 +2,9 @@
   padding: 150px 15px;
   background-color: var(--bg-color); /* Dynamic background color */
   color: var(--text-color); /* Dynamic text color */
-  text-align: center; /* Center align text for the entire section */
+  text-align: center;
+  position: relative; /* Added position relative */
+  z-index: 10; /* Ensure it stays on top */
 }
 
 .container {
@@ -25,6 +27,8 @@
   display: flex;
   justify-content: center; /* Centering social links */
   flex-wrap: wrap; /* Allow wrapping of social links */
+  gap: 20px; /* Added gap between items for better spacing */
+  z-index: 20; /* Ensure the links are above any other elements */
 }
 
 .social-links li {
@@ -36,12 +40,13 @@
   font-size: 1.2rem;
   color: var(--text-color); /* Match text color with the theme */
   transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-  padding: 5px; /* Added padding for better clickable area */
+  padding: 10px 15px; /* Added padding for better clickable area */
   border-radius: 5px; /* Rounded corners for links */
+  display: inline-block; /* Ensures the entire padding area is clickable */
 }
 
 .social-links a:hover {
-  transform: scale(1.1); /* Slightly smaller scale for hover */
+  transform: scale(1.1); /* Slightly larger scale for hover */
   color: #007bff; /* Change color on hover */
 }
 

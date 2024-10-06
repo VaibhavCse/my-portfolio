@@ -5,6 +5,8 @@
   color: #333;  /* Dark text for light mode */
   text-align: center;
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transitions */
+  position: relative;
+  z-index: 1;
 }
 
 .projectheading {
@@ -37,7 +39,9 @@
   flex-direction: column;
   justify-content: space-between;
   transition: background-color 0.3s ease, color 0.3s ease;
-  text-align: left; /* Better readability on small screens */
+  text-align: center; /* Centered text */
+  position: relative;
+  z-index: 2; /* Ensure it’s clickable */
 }
 
 .project-image {
@@ -63,7 +67,7 @@ p {
 
 .stack-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
   margin-bottom: 15px;
@@ -77,19 +81,30 @@ p {
   white-space: nowrap;
 }
 
-
+/* Ensure link is clickable and styled */
 .project-link {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 12px 25px;
   background-color: #007bff;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0 auto;
+  cursor: pointer;
+  position: relative;
+  z-index: 3; /* Ensure link is above everything */
 }
 
 .project-link:hover {
   background-color: #0056b3;
+  transform: scale(1.05);  /* Slight scale effect on hover */
+}
+
+.project-card:hover .project-link {
+  pointer-events: all; /* Ensure it's clickable on hover */
 }
 
 /* Dark Theme */
@@ -114,6 +129,7 @@ body.dark .project-link {
 
 body.dark .project-link:hover {
   background-color: #0056b3;
+  transform: scale(1.05); /* Scale on hover for dark mode */
 }
 
 /* Responsive Design */
@@ -163,19 +179,3 @@ body.dark .project-link:hover {
     font-size: 0.8rem; /* Adjust font size for smaller screens */
   }
 }
-
-.project-button {
-  background-color: #007bff; /* Button color */
-  color: #fff; /* Text color */
-  padding: 8px 15px; /* Reduced padding */
-  font-size: 1rem; /* Adjust font size */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.project-button:hover {
-  background-color: #0056b3; /* Darker color on hover */
-}
-

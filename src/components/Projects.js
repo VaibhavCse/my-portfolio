@@ -1,4 +1,3 @@
-// src/components/Projects.js
 import React from 'react';
 import './Projects.css';
 import csd from './CSD.png'
@@ -36,9 +35,7 @@ const Projects = () => {
       stack: ['React.js', 'Node.js', 'MongoDB'],
       link: 'https://ecogrocer.netlify.app/'
     }
-    // Add more projects here
   ];
-  
 
   return (
     <section id="projects" className="projects-section">
@@ -60,7 +57,6 @@ const Projects = () => {
       </div>
     </section>
   );
-  
 }
 
 export default Projects;

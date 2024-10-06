@@ -20,7 +20,9 @@ const Contact = () => {
           <a href="mailto:vaibhav77324@gmail.com">Email</a>
         </li>
         <li>
-          <a href="https://topmate.io/vaibhav_chaudhary20/">Topmate</a>
+          <a href="https://topmate.io/vaibhav_chaudhary20/" target="_blank" rel="noopener noreferrer">
+            Topmate
+          </a>
         </li>
         <li>
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
@@ -28,7 +30,7 @@ const Contact = () => {
           </a>
         </li>
         <li>
-          <a href="https://discord.com/channels/723908317705142382/723908318543741010">
+          <a href="https://discord.com/channels/723908317705142382/723908318543741010" target="_blank" rel="noopener noreferrer">
             Discord
           </a>
         </li>
