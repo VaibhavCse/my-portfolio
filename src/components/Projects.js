@@ -4,6 +4,8 @@ import csd from './CSD.png'
 import marketplace from './marketplace.png'
 import syncpath from './syncpath.png'
 import ecogrocer from './OrganicFoods.png'
+import avocsas from './avocsas.png'
+import sgb from './sgbindustries.png'
 
 const Projects = () => {
   const projects = [
@@ -34,6 +36,20 @@ const Projects = () => {
       image: ecogrocer,
       stack: ['React.js', 'Node.js', 'MongoDB'],
       link: 'https://ecogrocer.netlify.app/'
+    },
+    {
+      title: 'SGB Industries',
+      description: 'A fully responsive and dynamic single-page application for SGB Industries, highlighting the company’s expertise and services in industrial solutions and innovations.',
+      image: sgb,
+      stack: ['React.js'],
+      link: 'https://sgbindustries.netlify.app/'
+    },
+    {
+      title: 'Avocsas',
+      description: 'A fully responsive and dynamic single-page application for Avocsas Consulting, showcasing the company’s services in salesforce consulting and innovative business solutions.',
+      image: avocsas,
+      stack: ['React.js', 'Node.js', 'MongoDB'],
+      link: 'https://avocsas.in/'
     }
   ];
 
