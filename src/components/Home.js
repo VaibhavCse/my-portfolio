@@ -1,6 +1,6 @@
 import './Home.css';
 import profilePic from './profile_pic.jpg';
-import resume from './VaibhavChaudhary_Resume.pdf';
+import resume from './VaibhavChaudharyResume_New.pdf';
 
 const Home = () => {
   return (
