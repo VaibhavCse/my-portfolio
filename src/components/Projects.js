@@ -14,7 +14,7 @@ const Projects = () => {
       description: 'CSD is a leading technology platform transforming investor relations in investment management',
       image: csd, // Image URL
       stack: ['Node.js', 'MongoDB', 'EJS', 'Tailwind CSS' , 'Shufti Pro'], // Stack used
-      link: 'https://csd.formidium.com/'
+      link: 'https://commonsubdoc.com/'
     },
     {
       title: 'AltsMarketplace',

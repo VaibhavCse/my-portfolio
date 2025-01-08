@@ -10,7 +10,7 @@ const Experience = () => {
           <div className="job-card">
             <div className="job-icon">&#10004;</div> {/* Icon */}
             <div className="job-details">
-              <h3>Senior Associate Software Engineer</h3>
+              <h3>Software Engineer</h3>
               <p>1st June 2022 - present</p>
               <p>Formidium Technologies</p>
               <p>
@@ -21,7 +21,7 @@ const Experience = () => {
           <div className="job-card">
             <div className="job-icon">&#10004;</div> {/* Icon */}
             <div className="job-details">
-              <h3>Software Engineer</h3>
+              <h3>Jr. Software Engineer</h3>
               <p>1st July 2021 - 31st May 2022</p>
               <p>Formidium Technologies</p>
               <p>
