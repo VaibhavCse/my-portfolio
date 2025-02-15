@@ -6,51 +6,59 @@ import syncpath from './syncpath.png'
 import ecogrocer from './OrganicFoods.png'
 import avocsas from './avocsas.png'
 import sgb from './sgbindustries.png'
+import tax from './taxowealth.png'
 
 const Projects = () => {
   const projects = [
     {
-      title: 'CommonSubDoc',
-      description: 'CSD is a leading technology platform transforming investor relations in investment management',
-      image: csd, // Image URL
-      stack: ['Node.js', 'MongoDB', 'EJS', 'Tailwind CSS' , 'Shufti Pro'], // Stack used
-      link: 'https://commonsubdoc.com/'
+      "title": "CommonSubDoc",
+      "description": "A dynamic technology platform transforming investor relations with seamless onboarding, compliance reporting, and real-time data tracking. CSD enhances transparency and efficiency with intuitive dashboards, digital workflows, and secure API integrations.",
+      "image": csd,
+      "stack": ["Node.js", "MongoDB", "EJS", "Tailwind CSS", "Shufti Pro"],
+      "link": "https://commonsubdoc.com/"
+    },    
+    {
+      "title": "AltsMarketplace",
+      "description": "A comprehensive platform connecting investors, fund managers, and service providers in the alternative investment sector. AltsMarketplace streamlines investment interactions, enhances market insights, and fosters an efficient ecosystem for informed decision-making.",
+      "image": marketplace,
+      "stack": ["React.js", "Node.js", "MongoDB"],
+      "link": "https://altsmarketplace.com/"
+    },    
+    {
+      "title": "Tax O Wealth",
+      "description": "A dynamic financial advisory platform offering wealth management, tax planning, mutual funds, and insurance consultancy. Established in 2014, Tax O Wealth serves thousands of clients with smart investment strategies and seamless integrations like chatbots for enhanced user experience.",
+      "image": tax,
+      "stack": ["React.js", "Node.js", "MongoDB", "Chatbot Integration"],
+      "link": "https://taxowealth.com/"
+    },    
+    {
+      "title": "SyncPath Consulting",
+      "description": "A dynamic platform specializing in Salesforce consulting, offering services like implementation, customization, data migration, integration, and automation. SyncPath Consulting empowers businesses with tailored Salesforce solutions for efficiency and growth.",
+      "image": syncpath,
+      "stack": ["React.js"],
+      "link": "http://syncpath.in/"
     },
     {
-      title: 'AltsMarketplace',
-      description: 'Marketplace is the innovative convergence point for investors, fund managers, and service providers in the alternative investment sector.',
-      image: marketplace,
-      stack: ['React.js', 'Node.js', 'MongoDB'],
-      link: 'https://altsmarketplace.com/'
-    },
+      "title": "SGB Industries",
+      "description": "A leading manufacturer and distributor of premium agricultural products, specializing in besan, rice, wheat, pulses, and food oils. SGB Industries is committed to quality, sustainability, and reliable supply across domestic and national markets.",
+      "image": sgb,
+      "stack": ["React.js"],
+      "link": "https://sgbindustries.netlify.app/"
+    },    
     {
-      title: 'SyncPath Consulting',
-      description: 'A fully responsive and dynamic single page application for SyncPath Consulting, showcasing the company’s services in Salesforce consulting.',
-      image: syncpath,
-      stack: ['React.js'],
-      link: 'http://syncpath.in/'
-    },
+      "title": "Avocsas",
+      "description": "A robust platform specializing in Salesforce security and compliance, offering services like security audits, risk assessments, Salesforce Shield implementation, and compliance tracking. Avocsas helps businesses strengthen their Salesforce environment with cutting-edge security solutions.",
+      "image": avocsas,
+      "stack": ["React.js", "Node.js", "MongoDB"],
+      "link": "https://avocsas.in/"
+    },    
     {
-      title: 'Ecogrocer',
-      description: 'An e-commerce platform focused on organic food products, offering a seamless user experience for customers to shop for organic goods.',
-      image: ecogrocer,
-      stack: ['React.js', 'Node.js', 'MongoDB'],
-      link: 'https://ecogrocer.netlify.app/'
-    },
-    {
-      title: 'SGB Industries',
-      description: 'A fully responsive and dynamic single-page application for SGB Industries, highlighting the company’s expertise and services in industrial solutions and innovations.',
-      image: sgb,
-      stack: ['React.js'],
-      link: 'https://sgbindustries.netlify.app/'
-    },
-    {
-      title: 'Avocsas',
-      description: 'A fully responsive and dynamic single-page application for Avocsas Consulting, showcasing the company’s services in salesforce consulting and innovative business solutions.',
-      image: avocsas,
-      stack: ['React.js', 'Node.js', 'MongoDB'],
-      link: 'https://avocsas.in/'
-    }
+      "title": "Ecogrocer",
+      "description": "A demo e-commerce platform built to explore React, offering a seamless shopping experience for organic food products. Ecogrocer showcases a clean UI, dynamic product listings, and a smooth cart management system.",
+      "image": ecogrocer,
+      "stack": ["React.js", "Node.js", "MongoDB"],
+      "link": "https://ecogrocer.netlify.app/"
+    },         
   ];
 
   return (

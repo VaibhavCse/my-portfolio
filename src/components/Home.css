@@ -1,14 +1,16 @@
+/* Home Section */
 .home-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Keep this to full viewport height */
+  min-height: 100vh;
   position: relative;
-  padding: 0 20px;
+  padding: 50px 20px;
   overflow: hidden;
+  background-color: var(--bg-color);
 }
 
-/* Overlay for background */
+/* Overlay Effect */
 .home-section::before {
   content: '';
   position: absolute;
@@ -20,6 +22,7 @@
   z-index: 1;
 }
 
+/* Home Container */
 .home-container {
   display: flex;
   max-width: 1200px;
@@ -27,9 +30,11 @@
   align-items: center;
   justify-content: space-between;
   gap: 50px;
-  z-index: 2; 
+  z-index: 2;
+  flex-wrap: wrap;
 }
 
+/* Profile Image */
 .home-left {
   flex: 1;
   display: flex;
@@ -39,51 +44,70 @@
 
 .profile-img {
   width: 100%;
-  max-width: 350px;
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover;
+  max-width: 300px;
+  height: auto;
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
 }
 
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+/* Right Section (Text) */
 .home-right {
   flex: 1;
-  color: #fff; 
-  text-align: left; /* Align text to the left for better readability */
+  color: #fff;
+  text-align: left;
 }
 
+/* Headings */
 .home-right h1 {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: fadeInUp 0.8s ease-in-out;
 }
 
 .role-title {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  color: #61dafb;
+  animation: fadeInUp 1s ease-in-out;
 }
 
 .description {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   line-height: 1.6;
+  text-align: justify;
+  animation: fadeInUp 1.2s ease-in-out;
 }
 
-/* Button styling */
+/* Buttons */
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
 .btn {
-  padding: 15px 30px;
-  background-color: #61dafb;
-  color: #fff;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 5px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 8px;
   text-decoration: none;
-  margin-right: 15px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  color: #fff;
+  background-color: #61dafb;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
   background-color: #21a1f1;
+  transform: scale(1.05);
 }
 
 .resume-btn {
@@ -94,18 +118,17 @@
   background-color: #000;
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 900px) {
   .home-container {
     flex-direction: column;
     text-align: center;
-    gap: 30px; /* Add spacing between sections */
+    gap: 30px;
   }
 
   .profile-img {
-    width: 80%; /* Reduce the size for mobile */
-    max-width: 250px; /* Ensure it doesn’t exceed this size */
-    height: auto; /* Maintain aspect ratio */
+    width: 80%;
+    max-width: 250px;
   }
 
   .home-right h1 {
@@ -120,9 +143,13 @@
     font-size: 1.1rem;
   }
 
+  .btn-container {
+    justify-content: center;
+  }
+
   .btn {
-    font-size: 1rem;
-    padding: 10px 20px;
+    width: 100%;
+    max-width: 250px;
   }
 }
 
@@ -140,12 +167,24 @@
   }
 
   .profile-img {
-    width: 90%; /* Ensure it fits well on smaller screens */
-    max-width: 200px; /* Reduce further for very small devices */
+    width: 90%;
+    max-width: 200px;
   }
 
   .btn {
-    font-size: 0.9rem;
-    padding: 8px 15px;
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1; 
+    transform: translateY(0);
   }
 }

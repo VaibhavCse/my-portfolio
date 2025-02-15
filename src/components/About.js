@@ -16,6 +16,7 @@ import bootstrap from './bootstrap.jpeg';
 import tailwind from './tailwind.png';
 import html from './html.png';
 import shuftipro from './shuftiPros1.jpeg'
+import next from './nextjs-icon.webp'
 
 const About = () => {
   return (
@@ -40,6 +41,7 @@ const About = () => {
             <img src={mongoLogo} alt="MongoDB" className="tech-logo" />
             <img src={jsLogo} alt="JavaScript" className="tech-logo" />
             <img src={reactLogo} alt="React" className="tech-logo" />
+            <img src={next} alt="Next" className="tech-logo" />
             <img src={javaLogo} alt="Java" className="tech-logo" />
             <img src={python} alt="Python" className="tech-logo" />
             <img src={sql} alt="Sql" className="tech-logo" />

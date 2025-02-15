@@ -33,7 +33,7 @@ body, html {
   font-weight: bold;
   margin: 0;
   letter-spacing: 2px;
-  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  background: linear-gradient(90deg, #87CEEB, #ffffff, #1E90FF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -85,11 +85,21 @@ body, html {
     margin: 10px 0;
   }
 
+  /* Hamburger Menu Styling */
   .hamburger {
     display: block;
     cursor: pointer;
     font-size: 2rem;
-    color: whitesmoke;
+    color: black; /* Default color */
+    transition: color 0.3s ease;
+  }
+
+  .dark .hamburger {
+    color: white; /* White color for dark mode */
+  }
+
+  .hamburger-icon {
+    font-size: 2rem;
   }
 
   .theme-toggle {
@@ -124,17 +134,74 @@ body {
   color: black !important;
 }
 
+/* Theme Button Styling */
 .theme-button {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-.theme-button svg {
+.theme-icon {
   font-size: 24px;
   transition: transform 0.3s ease;
 }
 
-.theme-button:hover svg {
+.theme-button:hover .theme-icon {
   transform: rotate(360deg);  
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.85); /* Subtle transparency */
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    z-index: 2000;
+    padding: 20px 0;
+    backdrop-filter: blur(10px); /* Adds smooth blur effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+    padding: 10px 0;
+  }
+
+  .nav-links a {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out, transform 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: #61dafb;
+    transform: scale(1.1);
+  }
+
+  /* Close button */
+  .menu-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .menu-close:hover {
+    transform: rotate(90deg);
+  }
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, animateScroll as scroll } from 'react-scroll';
-import { FaBars, FaTimes, FaBone } from 'react-icons/fa';  // Import FaBone
+import { FaBars, FaTimes, FaBone } from 'react-icons/fa'; 
 import './Navbar.css';
 
 const Navbar = () => {
@@ -48,6 +48,7 @@ const Navbar = () => {
         <div className="logo">
           <h1>Vaibhav Chaudhary</h1>
         </div>
+
         <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
           <li><Link to="home" smooth={true} duration={500} onClick={scrollToTop}>Home</Link></li>
           <li><Link to="about" smooth={true} duration={500} onClick={closeMenuOnClick}>About</Link></li>
@@ -55,14 +56,18 @@ const Navbar = () => {
           <li><Link to="experience" smooth={true} duration={500} onClick={closeMenuOnClick}>Experience</Link></li>
           <li><Link to="contact" smooth={true} duration={500} onClick={closeMenuOnClick}>Contact</Link></li>
         </div>
+
+        {/* Theme Toggle */}
         <div className="theme-toggle">
           <button onClick={toggleDarkMode} className="theme-button">
-            <FaBone style={{ color: darkMode ? 'white' : 'black' }} /> {/* FaBone icon for light/dark mode */}
+            <FaBone className="theme-icon" />
           </button>
         </div>
+
+        {/* Mobile Menu (Hamburger) */}
         {isMobile && (
           <div className="hamburger" onClick={toggleMenu}>
-            {menuOpen ? <FaTimes /> : <FaBars />}
+            {menuOpen ? <FaTimes className="hamburger-icon" /> : <FaBars className="hamburger-icon" />}
           </div>
         )}
       </div>

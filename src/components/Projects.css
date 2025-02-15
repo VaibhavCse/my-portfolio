@@ -42,6 +42,7 @@
   text-align: center; /* Centered text */
   position: relative;
   z-index: 2; /* Ensure it’s clickable */
+  
 }
 
 .project-image {
@@ -179,3 +180,5 @@ body.dark .project-link:hover {
     font-size: 0.8rem; /* Adjust font size for smaller screens */
   }
 }
+
+
