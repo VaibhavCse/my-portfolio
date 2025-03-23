@@ -1,6 +1,6 @@
 import './Home.css';
 import profilePic from './profile_pic_new_crop.jpg';
-import resume from './VaibhavChaudharyResume_New.pdf';
+import resume from './VaibhavChaudhary_MERN.pdf';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
