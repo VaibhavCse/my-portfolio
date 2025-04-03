@@ -1,46 +1,48 @@
 import React, { useState, useEffect } from 'react';
-import { Link, animateScroll as scroll } from 'react-scroll';
-import { FaBars, FaTimes, FaBone } from 'react-icons/fa'; 
+import { Link } from 'react-scroll';
+import { FaBars, FaTimes, FaMoon, FaSun } from 'react-icons/fa';
 import './Navbar.css';
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem('darkMode') === 'true';
+  });
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (menuOpen && !event.target.closest('.mobile-menu') && !event.target.closest('.hamburger')) {
+        setMenuOpen(false);
+      }
+    };
+  
+    document.addEventListener('click', handleOutsideClick);
+    return () => document.removeEventListener('click', handleOutsideClick);
+  }, [menuOpen]);
+  
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', darkMode);
+
+    // ✅ Apply dark mode class to the <body> tag
     if (darkMode) {
-      document.body.classList.add('dark');
+      document.body.classList.add('dark-mode');
     } else {
-      document.body.classList.remove('dark');
+      document.body.classList.remove('dark-mode');
     }
   }, [darkMode]);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const closeMenuOnClick = () => {
-    setMenuOpen(false);
-  };
-
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-    setMenuOpen(false);
-  };
+  const toggleDarkMode = () => setDarkMode((prevMode) => !prevMode);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenuOnClick = () => setMenuOpen(false);
 
   return (
     <nav className={`navbar ${darkMode ? 'dark' : ''}`}>
@@ -49,27 +51,43 @@ const Navbar = () => {
           <h1>Vaibhav Chaudhary</h1>
         </div>
 
-        <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
-          <li><Link to="home" smooth={true} duration={500} onClick={scrollToTop}>Home</Link></li>
+        <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
+          <li><Link to="home" smooth={true} duration={500} onClick={closeMenuOnClick}>Home</Link></li>
           <li><Link to="about" smooth={true} duration={500} onClick={closeMenuOnClick}>About</Link></li>
           <li><Link to="projects" smooth={true} duration={500} onClick={closeMenuOnClick}>Projects</Link></li>
           <li><Link to="experience" smooth={true} duration={500} onClick={closeMenuOnClick}>Experience</Link></li>
           <li><Link to="contact" smooth={true} duration={500} onClick={closeMenuOnClick}>Contact</Link></li>
-        </div>
+        </ul>
 
-        {/* Theme Toggle */}
         <div className="theme-toggle">
           <button onClick={toggleDarkMode} className="theme-button">
-            <FaBone className="theme-icon" />
+            {darkMode ? <FaSun className="theme-icon" /> : <FaMoon className="theme-icon" />}
           </button>
         </div>
 
-        {/* Mobile Menu (Hamburger) */}
+ 
+        <div className="hamburger" onClick={toggleMenu}>
+          <FaBars className={`hamburger-icon ${menuOpen ? 'open' : ''}`} />
+        </div>
+
         {isMobile && (
-          <div className="hamburger" onClick={toggleMenu}>
-            {menuOpen ? <FaTimes className="hamburger-icon" /> : <FaBars className="hamburger-icon" />}
+          <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+            {/* Close Button Inside Sidebar */}
+            <button className="close-menu" onClick={toggleMenu}>
+              <FaTimes />
+            </button>
+
+            <ul>
+              <li><Link to="home" smooth={true} duration={500} onClick={closeMenuOnClick}>Home</Link></li>
+              <li><Link to="about" smooth={true} duration={500} onClick={closeMenuOnClick}>About</Link></li>
+              <li><Link to="projects" smooth={true} duration={500} onClick={closeMenuOnClick}>Projects</Link></li>
+              <li><Link to="experience" smooth={true} duration={500} onClick={closeMenuOnClick}>Experience</Link></li>
+              <li><Link to="contact" smooth={true} duration={500} onClick={closeMenuOnClick}>Contact</Link></li>
+            </ul>
           </div>
         )}
+
+
       </div>
     </nav>
   );

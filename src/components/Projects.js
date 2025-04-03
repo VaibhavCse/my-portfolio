@@ -7,59 +7,76 @@ import ecogrocer from './OrganicFoods.png'
 import avocsas from './avocsas.png'
 import sgb from './sgbindustries.png'
 import tax from './taxowealth.png'
+import lusora from './lusora.png'
+import wellnessherb from './wellness_herb.png'
 
 const Projects = () => {
   const projects = [
     {
       "title": "CommonSubDoc",
-      "description": "A dynamic technology platform transforming investor relations with seamless onboarding, compliance reporting, and real-time data tracking. CSD enhances transparency and efficiency with intuitive dashboards, digital workflows, and secure API integrations.",
+      "description": "A powerful investor relations platform that simplifies onboarding, compliance reporting, and real-time data tracking. It features intuitive dashboards, digital workflows, and secure API integrations to enhance transparency and efficiency.",
       "image": csd,
-      "stack": ["Node.js", "MongoDB", "EJS", "Tailwind CSS", "Shufti Pro"],
+      "stack": ["Node.js", "MongoDB", "EJS", "Tailwind CSS", "Shufti Pro", "AWS"],
       "link": "https://commonsubdoc.com/"
     },    
     {
       "title": "AltsMarketplace",
-      "description": "A comprehensive platform connecting investors, fund managers, and service providers in the alternative investment sector. AltsMarketplace streamlines investment interactions, enhances market insights, and fosters an efficient ecosystem for informed decision-making.",
+      "description": "A next-generation marketplace connecting investors, fund managers, and service providers in the alternative investment sector. It streamlines deal-making, offers advanced analytics, and enhances market insights for informed decision-making.",
       "image": marketplace,
-      "stack": ["React.js", "Node.js", "MongoDB"],
+      "stack": ["React.js", "Node.js", "MongoDB", "Express.js", "AWS"],
       "link": "https://altsmarketplace.com/"
     },    
     {
       "title": "Tax O Wealth",
-      "description": "A dynamic financial advisory platform offering wealth management, tax planning, mutual funds, and insurance consultancy. Established in 2014, Tax O Wealth serves thousands of clients with smart investment strategies and seamless integrations like chatbots for enhanced user experience.",
+      "description": "A fintech advisory platform providing wealth management, tax planning, mutual funds, and insurance consultancy. It integrates AI-powered chatbots, automated portfolio tracking, and secure financial tools to help users maximize their investments.",
       "image": tax,
-      "stack": ["React.js", "Node.js", "MongoDB", "Chatbot Integration"],
+      "stack": ["React.js", "Node.js", "MongoDB", "Chatbot Integration", "Payment Gateway"],
       "link": "https://taxowealth.com/"
-    },    
+    }, 
+    {
+      "title": "Lusora",
+      "description": "A luxury mineral water brand offering a digital experience with seamless navigation, modern UI, and real-time engagement. It features WhatsApp and email integration, Google Maps support, and a sleek mobile-friendly design.",
+      "image": lusora,
+      "stack": ["React.js", "Next.js", "Email Integration", "WhatsApp Integration", "Google Maps API"],
+      "link": "https://lusora.in/"
+    },       
     {
       "title": "SyncPath Consulting",
-      "description": "A dynamic platform specializing in Salesforce consulting, offering services like implementation, customization, data migration, integration, and automation. SyncPath Consulting empowers businesses with tailored Salesforce solutions for efficiency and growth.",
+      "description": "A Salesforce consulting firm specializing in implementation, customization, data migration, and automation. It helps businesses optimize workflows and integrate third-party tools seamlessly for maximum efficiency.",
       "image": syncpath,
-      "stack": ["React.js"],
+      "stack": ["React.js", "Salesforce API", "Node.js"],
       "link": "http://syncpath.in/"
     },
     {
+      "title": "Wellness Herb",
+      "description": "An online wellness platform offering herbal products with seamless payment and appointment booking. It includes Calendly scheduling, payment gateway integration, and an intuitive user experience.",
+      "image": wellnessherb,
+      "stack": ["React.js", "Node.js", "MongoDB", "Payment Integration", "Calendly API"],
+      "link": "https://wellnessherb.in/"
+    },
+    {
       "title": "SGB Industries",
-      "description": "A leading manufacturer and distributor of premium agricultural products, specializing in besan, rice, wheat, pulses, and food oils. SGB Industries is committed to quality, sustainability, and reliable supply across domestic and national markets.",
+      "description": "A manufacturer and distributor of premium agricultural products like besan, rice, wheat, pulses, and oils. The digital platform offers a clean UI, product catalogs, and optimized ordering systems for efficient supply chain management.",
       "image": sgb,
       "stack": ["React.js"],
       "link": "https://sgbindustries.netlify.app/"
     },    
     {
       "title": "Avocsas",
-      "description": "A robust platform specializing in Salesforce security and compliance, offering services like security audits, risk assessments, Salesforce Shield implementation, and compliance tracking. Avocsas helps businesses strengthen their Salesforce environment with cutting-edge security solutions.",
+      "description": "A security-focused Salesforce platform offering compliance tracking, risk assessments, and security audits. It features Salesforce Shield implementation and enterprise-grade security enhancements for businesses.",
       "image": avocsas,
-      "stack": ["React.js", "Node.js", "MongoDB"],
+      "stack": ["React.js", "Salesforce Integration"],
       "link": "https://avocsas.in/"
     },    
     {
       "title": "Ecogrocer",
-      "description": "A demo e-commerce platform built to explore React, offering a seamless shopping experience for organic food products. Ecogrocer showcases a clean UI, dynamic product listings, and a smooth cart management system.",
+      "description": "A modern e-commerce demo platform for organic food shopping. Built with a mobile-first approach, it features dynamic product listings, seamless cart management, and a simple checkout flow.",
       "image": ecogrocer,
-      "stack": ["React.js", "Node.js", "MongoDB"],
+      "stack": ["React.js", "Node.js", "MongoDB", "Payment Integration"],
       "link": "https://ecogrocer.netlify.app/"
-    },         
-  ];
+    },     
+];
+
 
   return (
     <section id="projects" className="projects-section">

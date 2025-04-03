@@ -181,4 +181,328 @@ body.dark .project-link:hover {
   }
 }
 
+/* Projects Section */
+.projects-section {
+  padding: 80px 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Heading Animation */
+.projectheading {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 40px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInSlide 1s ease-in-out forwards;
+}
+
+/* Underline Animation */
+.projectheading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #007bff, #00d4ff);
+  margin: 10px auto 0;
+  animation: underlineWave 1.5s infinite ease-in-out alternate;
+}
+
+/* Projects Container */
+.projects-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+/* Project Card */
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInZoom 1s ease-in-out forwards;
+}
+
+/* Hover Effect */
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Image */
+.project-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Project Title */
+.project-card h3 {
+  font-size: 1.4rem;
+  color: #007bff;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeInText 1s ease-in-out forwards 0.3s;
+}
+
+/* Project Description */
+.project-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #000;
+  margin-bottom: 15px;
+  opacity: 0;
+  animation: fadeInText 1s ease-in-out forwards 0.5s;
+}
+
+/* Tech Stack */
+.stack-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Tech Stack Styling */
+.stack-item {
+  background-color: #ececec;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+/* Tech Stack Hover */
+.stack-item:hover {
+  transform: scale(1.2);
+}
+
+/* Visit Button */
+.project-link {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.project-link:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes underlineWave {
+  0% {
+    width: 60px;
+  }
+  50% {
+    width: 100px;
+  }
+  100% {
+    width: 60px;
+  }
+}
+
+/* Dark Mode */
+body.dark .projects-section {
+  background-color: var(--background-color);
+  color: #fff;
+}
+
+body.dark .project-card {
+  background-color: #1e1e1e;
+  color: #ddd;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .stack-item {
+  background-color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-card p {
+    font-size: 20px;
+  }
+  .projects-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .project-card {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .projectheading {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card p {
+    font-size: 20px;
+  }
+  .project-card {
+    padding: 15px;
+  }
+
+  .projectheading {
+    font-size: 2rem;
+  }
+
+  .project-link {
+    padding: 10px 20px;
+  }
+}
+
+/* Animated underline for heading */
+
+
+/* Dark Mode Support */
+body.dark .project-card {
+  background-color: #1e1e1e;
+  color: #ddd;
+  box-shadow: 0 4px 10px rgba(248, 194, 194, 0.5);
+}
+
+body.dark .project-card:hover, 
+body.dark .project-card:active {
+  box-shadow: 0px 0px 15px 3px #00b7ff;
+}
+
+/* Smooth transition for project link */
+.project-link {
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 12px 25px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-link:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Updated Hover Highlight with Blue Glow */
+.project-card:hover, .project-card:active {
+  box-shadow: 0px 0px 15px 3px rgba(0, 183, 255, 0.8); /* Neon Blue Glow */
+  transform: scale(1.05);
+}
+
+/* Ensure Description Text is White in Dark Mode */
+body.dark .project-card p {
+  color: #ffffff; /* Bright white text in dark mode */
+}
+
+body.dark .project-card h3 {
+  color: #00b7ff; /* Neon Blue for Titles */
+}
+
+body.dark .project-card {
+  background-color: #1e1e1e;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Tech Stack */
+.stack-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.stack-item {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+/* Dark Mode */
+[data-theme="dark"] .stack-item {
+  background: rgba(0, 183, 255, 0.15); /* Light blue background */
+  color: #00d9ff; /* Neon blue text */
+  border: 1px solid rgba(0, 183, 255, 0.6); /* Subtle blue border */
+  text-shadow: 0 0 1px #00d9ff;
+}
+
+/* Light Mode */
+[data-theme="light"] .stack-item {
+  background: #f0f0f0; /* Light gray */
+  color: #000;
+  border: 1px solid #aaa;
+}
+
+/* Hover Effect - Neon Glow in Both Modes */
+.stack-item:hover {
+  transform: scale(1.1);
+  background: rgba(0, 183, 255, 0.3); /* Stronger neon blue */
+  color: #fff;
+  box-shadow: 0 0 5px #00d9ff, 0 0 3px #00d9ff; /* Intense neon glow */
+}
 

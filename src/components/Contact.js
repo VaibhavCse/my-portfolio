@@ -4,14 +4,15 @@ import { motion } from "framer-motion";
 const Contact = () => {
   return (
     <section id="contact" className="contact-section">
-      {/* Animated Heading */}
-      <motion.h2 
+      {/* Animated Heading with Underline */}
+      <motion.div 
+        className="contact-header"
         initial={{ opacity: 0, y: -20 }} 
         animate={{ opacity: 1, y: 0 }} 
         transition={{ duration: 0.5 }}
       >
-        Let's Connect
-      </motion.h2>
+        <h2 className="section-title">Let's Connect</h2>
+      </motion.div>
 
       {/* Animated Paragraph */}
       <motion.p 
@@ -38,6 +39,7 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5, delay: index * 0.2 }}
             whileHover={{ scale: 1.1, rotate: 2 }}
+            whileTap={{ scale: 0.9 }}
           >
             <a href={item.link} target="_blank" rel="noopener noreferrer">{item.name}</a>
           </motion.li>

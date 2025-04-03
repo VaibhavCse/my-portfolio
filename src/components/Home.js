@@ -17,13 +17,14 @@ const Home = () => {
   }, [theme]);
 
   return (
-    <section className={`home-section ${theme}`}>
+    <section id="home" className={`home-section ${theme}`}>
       <div className="home-container">
+        
         {/* Profile Image Section */}
         <motion.div 
           className="home-left"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <img src={profilePic} alt="Vaibhav Chaudhary" className="profile-img" />
@@ -44,7 +45,7 @@ const Home = () => {
           <div className="btn-container">
             <motion.a 
               href="#contact" 
-              className="btn"
+              className="btn primary-btn"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -53,7 +54,7 @@ const Home = () => {
             <motion.a 
               href={resume} 
               download="VaibhavChaudharyResume.pdf" 
-              className="btn resume-btn"
+              className="btn secondary-btn"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -61,6 +62,7 @@ const Home = () => {
             </motion.a>
           </div>
         </motion.div>
+
       </div>
     </section>
   );
