@@ -17,6 +17,7 @@ import tailwind from './tailwind.png';
 import html from './html.png';
 import shuftipro from './shuftiPros1.jpeg'
 import next from './nextjs-icon.webp'
+import docker from './docker.png'
 
 const About = () => {
   return (
@@ -50,6 +51,7 @@ const About = () => {
             <img src={bootstrap} alt="Bootstrap" className="tech-logo" />
             <img src={tailwind} alt="Tailwind" className="tech-logo" />
             <img src={shuftipro} alt="Shufti Pro" className="tech-logo" />
+            <img src={docker} alt="Docker" className="tech-logo" />
           </div>
         </div>
         <div className="about-left">
