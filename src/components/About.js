@@ -18,6 +18,7 @@ import html from './html.png';
 import shuftipro from './shuftiPros1.jpeg'
 import next from './nextjs-icon.webp'
 import docker from './docker.png'
+import aws from './aws.png'
 
 const About = () => {
   return (
@@ -26,15 +27,14 @@ const About = () => {
         <div className="about-right">
           <h2>About Me</h2>
           <p>
-            Hello! My name is Vaibhav Chaudhary, I’m a dedicated full stack developer with 4 years of experience in building efficient, scalable, and innovative web applications. I specialize in creating user-friendly experiences with modern technologies like <strong>Node.js</strong>, <strong>MongoDB</strong>, <strong>JavaScript</strong>, and <strong>React</strong>.
+            Hello! My name is Vaibhav Chaudhary, I’m a dedicated full stack developer with 4 years of experience in building efficient, scalable, and innovative web applications. I specialize in creating user-friendly experiences with modern technologies like <strong>Node.js</strong>, <strong>MongoDB</strong>, <strong>JavaScript</strong>, <strong>React</strong>, and <strong>AWS</strong>.
           </p>
           <p>
-            I’m passionate about bringing ideas to life through clean, maintainable, and efficient code. From back-end architecture to front-end development, I love solving complex problems, learning new technologies, and collaborating with teams to deliver exceptional solutions.
+            I’m passionate about bringing ideas to life through clean, maintainable, and efficient code. From back-end architecture to front-end development and cloud infrastructure, I love solving complex problems, learning new technologies, and collaborating with teams to deliver exceptional solutions.
           </p>
           <p>
             My journey as a developer has taught me the value of continuous learning, and I’m always looking for new challenges that push me to grow and evolve in my craft.
-          </p>
-          
+          </p>        
           {/* Tech Stack Section */}
           <h3>Technologies I Work With:</h3>
           <div className="tech-stack">
@@ -43,6 +43,7 @@ const About = () => {
             <img src={jsLogo} alt="JavaScript" className="tech-logo" />
             <img src={reactLogo} alt="React" className="tech-logo" />
             <img src={next} alt="Next" className="tech-logo" />
+            <img src={aws} alt="AWS" className="tech-logo" />
             <img src={javaLogo} alt="Java" className="tech-logo" />
             <img src={python} alt="Python" className="tech-logo" />
             <img src={sql} alt="Sql" className="tech-logo" />
