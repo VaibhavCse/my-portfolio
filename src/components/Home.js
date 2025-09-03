@@ -1,6 +1,6 @@
 import './Home.css';
 import profilePic from './profile_pic_new_crop.jpg';
-import resume from './VaibhavChaudharyResume_MERN_STACK.pdf';
+import resume from './VaibhavChaudharyResume_MERN.pdf';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
@@ -40,7 +40,7 @@ const Home = () => {
           <h1>Welcome to my Portfolio!</h1>
           <p className="role-title">SDE 2 | Full Stack Developer</p>
           <p className="description">
-            As a passionate full stack developer, I specialize in building high-performance, scalable web applications that combine efficiency with user-focused design. With hands-on expertise in modern technologies like <strong>Node.js</strong>, <strong>React.js</strong>, and <strong>MongoDB</strong>, I create dynamic and responsive solutions tailored to meet the demands of modern web development.
+           As a passionate Full Stack Developer, I specialize in building high-performance, scalable web applications that combine efficiency with user-focused design. With hands-on expertise in modern technologies like Node.js, React.js, Next.js, and MongoDB, I deliver dynamic and responsive solutions tailored to modern business needs. In addition to MERN expertise, I integrate Large Language Models (LLMs) through APIs and frameworks like OpenAI and prompt engineering to create AI-powered features such as chatbots. I am dedicated to delivering innovative, efficient, and future-ready applications.
           </p>
           <div className="btn-container">
             <motion.a 
